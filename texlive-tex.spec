@@ -38,7 +38,6 @@ permission.
 
 #-----------------------------------------------------------------------
 %files
-%{_bindir}/initex
 %doc %{_mandir}/man1/tex.1*
 %doc %{_texmfdir}/doc/man/man1/tex.man1.pdf
 %doc %{_tlpkgobjdir}/*.tlpobj
@@ -50,10 +49,6 @@ permission.
 %build
 
 %install
-mkdir -p %{buildroot}%{_bindir}
-pushd %{buildroot}%{_bindir}
-    ln -sf tex initex
-popd
 mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf %{buildroot}%{_datadir}
 mkdir -p %{buildroot}%{_mandir}/man1
