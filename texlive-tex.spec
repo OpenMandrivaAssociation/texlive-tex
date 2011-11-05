@@ -15,7 +15,7 @@ Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tex.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tex.doc.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
-Requires(post):	texlive-tlpkg
+Requires(pre):	texlive-tlpkg
 Requires:	texlive-kpathsea
 Requires:	texlive-plain
 Requires:	texlive-tex.bin
