@@ -6,7 +6,7 @@
 # catalog-version 3.1415926
 Name:		texlive-tex
 Version:	3.1415926
-Release:	2
+Release:	3
 Summary:	A sophisticated typesetting engine
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/systems/knuth/dist/tex
@@ -16,6 +16,7 @@ Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tex.doc.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
+Requires(post):	texlive-tetex
 Requires:	texlive-kpathsea
 Requires:	texlive-plain
 Requires:	texlive-tex.bin
@@ -34,8 +35,17 @@ book; this source is there to read, as an example of writing
 TeX -- it should not be processed without Knuth's direct
 permission.
 
+%post
+    %{_sbindir}/texlive.post
+
+%postun
+    if [ $1 -eq 0 ]; then
+	%{_sbindir}/texlive.post
+    fi
+
 #-----------------------------------------------------------------------
 %files
+%_texmf_fmtutil_d/tex
 %doc %{_mandir}/man1/tex.1*
 %doc %{_texmfdir}/doc/man/man1/tex.man1.pdf
 
@@ -50,3 +60,9 @@ mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf %{buildroot}%{_datadir}
 mkdir -p %{buildroot}%{_mandir}/man1
 mv %{buildroot}%{_texmfdir}/doc/man/man1/*.1 %{buildroot}%{_mandir}/man1
+mkdir -p %{buildroot}%{_texmf_fmtutil_d}
+cat > %{buildroot}%{_texmf_fmtutil_d}/tex <<EOF
+#
+# from tex:
+tex tex - tex.ini
+EOF
