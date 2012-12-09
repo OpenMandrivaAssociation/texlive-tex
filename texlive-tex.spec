@@ -66,3 +66,25 @@ cat > %{buildroot}%{_texmf_fmtutil_d}/tex <<EOF
 # from tex:
 tex tex - tex.ini
 EOF
+
+
+%changelog
+* Wed Aug 08 2012 Paulo Andrade <pcpa@mandriva.com.br> 3.1415926-4
++ Revision: 812890
+- Update to latest release.
+
+* Tue Feb 21 2012 Paulo Andrade <pcpa@mandriva.com.br> 3.1415926-3
++ Revision: 778465
+- Rebuild after tlpobj2spec.pl bug correction.
+
+* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 3.1415926-2
++ Revision: 756593
+- Rebuild to reduce used resources
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 3.1415926-1
++ Revision: 719673
+- texlive-tex
+- texlive-tex
+- texlive-tex
+- texlive-tex
+
