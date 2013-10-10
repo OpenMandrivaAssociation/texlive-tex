@@ -1,4 +1,4 @@
-# revision 26689
+# revision 29764
 # category TLCore
 # catalog-ctan /systems/knuth/dist/tex
 # catalog-date 2011-11-09 15:33:34 +0100
@@ -6,7 +6,7 @@
 # catalog-version 3.1415926
 Name:		texlive-tex
 Version:	3.1415926
-Release:	4
+Release:	5
 Summary:	A sophisticated typesetting engine
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/systems/knuth/dist/tex
@@ -47,7 +47,7 @@ permission.
 %files
 %_texmf_fmtutil_d/tex
 %doc %{_mandir}/man1/tex.1*
-%doc %{_texmfdir}/doc/man/man1/tex.man1.pdf
+%doc %{_texmfdistdir}/doc/man/man1/tex.man1.pdf
 
 #-----------------------------------------------------------------------
 %prep
@@ -57,34 +57,12 @@ permission.
 
 %install
 mkdir -p %{buildroot}%{_datadir}
-cp -fpar texmf %{buildroot}%{_datadir}
+cp -fpar texmf-dist %{buildroot}%{_datadir}
 mkdir -p %{buildroot}%{_mandir}/man1
-mv %{buildroot}%{_texmfdir}/doc/man/man1/*.1 %{buildroot}%{_mandir}/man1
+mv %{buildroot}%{_texmfdistdir}/doc/man/man1/*.1 %{buildroot}%{_mandir}/man1
 mkdir -p %{buildroot}%{_texmf_fmtutil_d}
 cat > %{buildroot}%{_texmf_fmtutil_d}/tex <<EOF
 #
 # from tex:
 tex tex - tex.ini
 EOF
-
-
-%changelog
-* Wed Aug 08 2012 Paulo Andrade <pcpa@mandriva.com.br> 3.1415926-4
-+ Revision: 812890
-- Update to latest release.
-
-* Tue Feb 21 2012 Paulo Andrade <pcpa@mandriva.com.br> 3.1415926-3
-+ Revision: 778465
-- Rebuild after tlpobj2spec.pl bug correction.
-
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 3.1415926-2
-+ Revision: 756593
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 3.1415926-1
-+ Revision: 719673
-- texlive-tex
-- texlive-tex
-- texlive-tex
-- texlive-tex
-
