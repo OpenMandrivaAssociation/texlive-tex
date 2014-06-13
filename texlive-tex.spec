@@ -6,7 +6,7 @@
 # catalog-version 3.1415926
 Name:		texlive-tex
 Version:	3.1415926
-Release:	9
+Release:	10
 Summary:	A sophisticated typesetting engine
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/systems/knuth/dist/tex
