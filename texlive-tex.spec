@@ -1,12 +1,12 @@
-# revision 29764
+# revision 33736
 # category TLCore
 # catalog-ctan /systems/knuth/dist/tex
-# catalog-date 2011-11-09 15:33:34 +0100
+# catalog-date 2014-02-26 23:03:13 +0100
 # catalog-license knuth
-# catalog-version 3.1415926
+# catalog-version 3.14159265
 Name:		texlive-tex
-Version:	3.1415926
-Release:	10
+Version:	3.14159265
+Release:	1
 Summary:	A sophisticated typesetting engine
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/systems/knuth/dist/tex
