@@ -1,18 +1,12 @@
-# revision 33736
-# category TLCore
-# catalog-ctan /systems/knuth/dist/tex
-# catalog-date 2014-02-26 23:03:13 +0100
-# catalog-license knuth
-# catalog-version 3.14159265
 Name:		texlive-tex
-Version:	3.14159265
-Release:	5
+Version:	62387
+Release:	1
 Summary:	A sophisticated typesetting engine
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/systems/knuth/dist/tex
 License:	KNUTH
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tex.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tex.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tex.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tex.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -36,22 +30,22 @@ TeX -- it should not be processed without Knuth's direct
 permission.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
 %_texmf_fmtutil_d/tex
-%doc %{_mandir}/man1/tex.1*
-%doc %{_texmfdistdir}/doc/man/man1/tex.man1.pdf
+%doc %{_mandir}/man1/*.1*
+%doc %{_texmfdistdir}/doc/man/man1/*
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
