@@ -1,5 +1,5 @@
 Name:		texlive-tex
-Version:	70015
+Version:	73848
 Release:	1
 Summary:	A sophisticated typesetting engine
 Group:		Publishing
